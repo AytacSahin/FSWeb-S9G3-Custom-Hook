@@ -4,13 +4,12 @@ import axios from "axios";
 import Charts from "./components/Charts";
 import Navbar from "./components/Navbar";
 
-import {geceModuAc} from "./hooks/geceModuAc.js";
+import useGeceModuAc from "./hooks/useGeceModuAc.js";
 
 const App = () => {
   const [coinData, setCoinData] = useState([]);
   // const [geceModu, setGeceModu] = useState(false);
-  const [geceModu, gecemoduHandler] = geceModuAc(false);
-
+  const [geceModu, gecemoduHandler] = useGeceModuAc(true);
   useEffect(() => {
     axios
       .get(
